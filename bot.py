@@ -14,6 +14,7 @@ async def on_ready():
 async def load_extensions():
     await bot.load_extension('cogs.messages')
     await bot.load_extension('cogs.valorant')
+    await bot.load_extension('cogs.roles')
 
 async def main():
     async with bot:
