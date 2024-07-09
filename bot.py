@@ -1,7 +1,6 @@
 import os
 import discord
 from discord.ext import commands
-import random
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -14,6 +13,7 @@ async def on_ready():
 
 async def load_extensions():
     await bot.load_extension('cogs.messages')
+    await bot.load_extension('cogs.valorant')
 
 async def main():
     async with bot:
