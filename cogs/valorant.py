@@ -13,5 +13,11 @@ class Valorant(commands.Cog):
         result = f"Hehehe je t'ai trouvé {player.get('name')}. Bah alors on est niveau {player.get('account_level')} ?"
         await ctx.send(result)
 
+    @commands.command()
+    async def mmr(self, ctx, playerName:str, playerTag:str):
+        mmr = Api.getMMR(playerName, playerTag)
+        result = mmr.get('data').get('current_data').get('currenttierpatched')
+        await ctx.send(result)
+
 async def setup(bot):
     await bot.add_cog(Valorant(bot))

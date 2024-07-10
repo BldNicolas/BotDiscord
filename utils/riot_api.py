@@ -20,3 +20,11 @@ class Api:
     def getPlayer(playerName:str, playerTag:str):
         response = Api.call(f"v1/account/{playerName}/{playerTag}")
         return response.get('data')
+    
+    @staticmethod
+    def getMMR(playerName:str, playerTag):
+        player = Api.getPlayer(playerName, playerTag)
+        response = Api.call(
+            f"v2/mmr/{player.get('region')}/{player.get('name')}/{player.get('tag')}"
+        )
+        return response
