@@ -4,7 +4,7 @@ import random
 class Messages(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-        
+
     @commands.command()
     async def hey(self, ctx):
         nickAuthor = ctx.author.nick
@@ -18,5 +18,5 @@ class Messages(commands.Cog):
         result = f"Hey {nickAuthor} comment est ce que tu vas ? T'es toujours {roleName} ?"
         await ctx.send(result)
 
-    async def setup(bot):
-        await bot.add_cog(Messages(bot))
+async def setup(bot):
+    await bot.add_cog(Messages(bot))
